@@ -13,7 +13,7 @@ class RemoveKraPinFromUsersTable extends Migration
      */
     public function up()
     {
-        Schema::dropColumns('users', ['kra_pin', 'website']);
+        Schema::dropColumns('users', ['kra_pin']);
     }
 
     /**
@@ -25,7 +25,6 @@ class RemoveKraPinFromUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('kra_pin')->nullable();
-            $table->string('website')->nullable();
         });
     }
 }
