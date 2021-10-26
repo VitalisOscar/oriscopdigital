@@ -20,7 +20,7 @@ class DashboardController extends Controller
                 'clients' => User::count(),
                 'adverts' => Advert::count(),
                 'categories' => Category::count(),
-                'scheduled_adverts' => 4
+                'scheduled_adverts' => Advert::canBeAired()->scheduled(today())->count()
             ]
         ]);
     }
