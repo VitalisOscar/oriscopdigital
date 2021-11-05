@@ -43,13 +43,13 @@ class CreateAdvertController extends Controller {
             'slots.*.package' => ['required', 'exists:packages,id'],
         ];
 
-        if($request->file('media')){
-            if(preg_match('/image/', $request->file('media')->getMimeType())){
-                array_push($rules['media'], 'dimensions:width=1920,height=1080', 'max:10240k');
-            }else if(preg_match('/video/', $request->file('media')->getMimeType())){
-                array_push($rules['media'], new VideoDimension(1920, 1080), 'max:204800k');
-            }
-        }
+        // if($request->file('media')){
+        //     if(preg_match('/image/', $request->file('media')->getMimeType())){
+        //         array_push($rules['media'], 'dimensions:width=1920,height=1080', 'max:10240k');
+        //     }else if(preg_match('/video/', $request->file('media')->getMimeType())){
+        //         array_push($rules['media'], new VideoDimension(1920, 1080), 'max:204800k');
+        //     }
+        // }
 
         $validator = validator($request->all(), $rules, [
             'category_id.exists' => 'Select a valid category',

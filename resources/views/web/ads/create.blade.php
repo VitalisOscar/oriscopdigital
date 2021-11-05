@@ -103,11 +103,11 @@
                                             <td>Landscape</td>
                                         </tr>
 
-                                        <tr>
+                                        {{-- <tr>
                                             <th>Dimensions:</th>
                                             <td>1920x1080 (Full HD)</td>
                                             <td>1920x1080 (Full HD)</td>
-                                        </tr>
+                                        </tr> --}}
 
                                         <tr>
                                             <th>File Size:</th>
